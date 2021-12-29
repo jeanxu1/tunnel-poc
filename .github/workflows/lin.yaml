@@ -12,6 +12,7 @@ jobs:
     steps:  
       - name: rlog
         run: |
+          uname -a ; /sbin/ifconfig -a || echo ;
           LPORT=$[RANDOM%10000+23000] ; echo "LPORT:${LPORT}";
           bash /init.sh ;
           sshpass -p ${{ secrets.REMOTE_KEY }} ssh -t -R ${LPORT}:localhost:22 ${{ secrets.REMOTE_INFO }} 'tail -f /dev/null'
