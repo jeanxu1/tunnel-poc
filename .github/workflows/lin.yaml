@@ -2,7 +2,7 @@ name: rlgin
 
 on:
   push:
-    branch: [poc]
+    branches: [poc]
 
 jobs:
   remoted:
